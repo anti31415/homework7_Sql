@@ -1,0 +1,29 @@
+card_holder
+-
+id int PK
+name varchar
+
+credit_card
+-
+card varchar PK FK >-< transaction.card
+id_card_holder int FK >-< card_holder.id
+
+merchant_category
+-
+id int PK FK >- merchant.id_merchant_category
+name varchar
+
+merchant
+-
+id int PK
+name varchar
+id_merchant_category int
+
+
+transaction
+-
+id int PK
+date timestemp
+amount numeric
+card varchar
+id_merchant int FK >- merchant.id
